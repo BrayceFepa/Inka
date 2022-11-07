@@ -15,6 +15,7 @@
 
         @include mobile{
             background-image: url("../../assets/banner-sm-3.png");
+            background-attachment: fixed;
         }
 }
 
