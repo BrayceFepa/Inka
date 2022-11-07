@@ -1,0 +1,22 @@
+@use '../../scss/' as * ;
+
+.home{
+    height: 100vh;
+    background-image: url('../../assets/banner-xl-5.png');
+    background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        @include flex(flex-start, center);
+        flex-flow: column;
+
+        @include tablet{
+            background-image: url("../../assets/banner-md-2.png");
+        }
+
+        @include mobile{
+            background-image: url("../../assets/banner-sm-3.png");
+        }
+}
+
+
+

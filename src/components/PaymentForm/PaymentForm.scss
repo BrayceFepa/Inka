@@ -1,0 +1,102 @@
+@use '../../scss/' as *;
+
+.payment-form{
+    width: 100%;
+
+    .title{
+        @include flex(center, center);
+        flex-flow: column;
+        h2{
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 10px;
+        }
+        img{
+            height: 80px;
+        }
+        margin-bottom: 20px;
+    }
+
+    .content-form{
+        @include flex(center, center);
+        flex-flow: column;
+        gap: 20px;
+        
+        .qty{
+            @include flex(center, space-between);
+            gap: 20px;
+            >span{
+                font-weight: bold;
+            }
+
+            .handlqty{
+                @include flex(center, space-between);
+                gap: 10px;
+                svg{
+                    cursor: pointer;
+                    color: #00c700;
+                }
+            }
+        }
+
+        .price{
+            font-weight: bold;
+            font-size: 17px;
+            span{
+                color: #00c700;
+            }
+        }
+
+        .payer-details{
+            input{
+                outline: none;
+                width: 100%;
+                border-radius: 10px;
+                border: 1px solid rgba(0, 0, 0, 0.3);
+                padding: 10px;
+            }
+        }
+
+        .services{
+            @include flex(center, space-between);
+            gap: 30px;
+
+            .service{
+                @include flex(center, center);
+                gap: 5px;
+
+                .img-service{
+                    height: 20px;
+                    width: 20px;
+                    position: relative;
+                    border-radius: 100%;
+                    object-fit: cover;
+                    overflow: hidden;
+
+                    img{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+
+            }
+        }
+
+    }
+
+    .checkout-btn{
+        width: 100%;
+        background: linear-gradient(60deg, #00c700, #22f722);
+        margin-top: 20px;
+        color: #fff;
+
+        
+    }
+
+}

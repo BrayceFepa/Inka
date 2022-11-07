@@ -1,0 +1,62 @@
+@use '../../scss/' as * ;
+
+@keyframes appear {
+    from{
+        margin-top: -100px;
+        opacity: 0;
+    }
+
+    to{
+        margin-top: 0;
+        opacity: 1;
+    }
+}
+
+.buttons{
+    @include flex(center, space-between);
+    gap: 20px;
+    margin-top: 30px;
+
+    .discover-btn {
+            background: linear-gradient(60deg, #00c700, #22f722);
+            color: #fff;
+            font-size: 20px;
+            display: flex;
+            @include flex(center, center);
+            gap: 7px;
+            transition: hover .3s ease;
+            animation: appear 2s ease;
+            
+
+            &:hover{
+                background: none;
+                border: 1px solid #00c700;
+                color: #00c700;
+            }
+
+        }
+
+
+        .pay-btn{
+            background: linear-gradient(60deg, #cf3d02, #e8a714);
+                color: #fff;
+                font-size: 20px;
+                display: flex;
+                @include flex(center, center);
+                gap: 7px;
+                transition: hover .3s ease;
+                animation: appear 1.5s ease;
+            
+                &:hover {
+                    background: none;
+                    border: 1px solid #cf3d02;
+                    color: #cf3d02;
+                }
+        }
+
+}
+
+
+
+
+

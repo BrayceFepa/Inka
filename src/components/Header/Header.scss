@@ -1,0 +1,53 @@
+@use '../../scss/' as * ;
+
+
+
+.header{
+    height: $header-height;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99; 
+
+
+
+    &__wrapper{
+        @include flex(center, center);
+        position: relative;
+        left: -370px;
+
+       
+
+        .logo {
+                img {
+                    width: 70px;
+                    margin-top: 20px;
+        
+                    @include mobile {
+                        width: 20px;
+                        margin-right: 0;
+                        margin-top: 5px;
+                        margin-bottom: 20px;
+                    }
+                }
+                margin-right: 10px;
+            }
+
+                         @include tablet {
+                             left: -170px;
+                             .logo{
+                                img{
+                                    width: 50px;
+                                }
+                             }
+                         }
+
+                         @include mobile{
+                            left: -10px;
+                            flex-flow: column;
+                         }
+    }
+}
+
+
