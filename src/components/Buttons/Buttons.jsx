@@ -2,9 +2,10 @@ import React, { useRef, useState } from "react";
 import "./Buttons.scss";
 import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
 import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
-import previewVideo from "../../assets/JavaScript ES6, ES7, ES8- Learn to Code on the Bleeding Edge (Full Course).mp4";
 import ModalVideo from "../ModalVideo/ModalVideo";
 import PaymentForm from "../PaymentForm/PaymentForm";
+import AmazoneIcon from '../../assets/amazone_icon.png';
+import AmazoneBlack from '../../assets/amazone-black.png';
 
 const Buttons = () => {
   const [modalOpened, setModalOpened] = useState(false);
@@ -29,6 +30,12 @@ const Buttons = () => {
           {" "}
           <ShoppingCartCheckoutIcon /> Acheter{" "}
         </button>
+        <a href="https://www.amazon.fr/" target="_blank" className="btn amazone-btn">
+          
+          {" "}
+          <img src={AmazoneIcon} alt="" className="am-white" />{" "}
+          <img src={AmazoneBlack} className='am-black' alt="" />
+        </a>
       </div>
     </>
   );

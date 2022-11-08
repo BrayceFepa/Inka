@@ -1,6 +1,6 @@
 import React from "react";
 import "./Hero.scss";
-import FloatingInka from '../../assets/floating-inka.png';
+import FloatingArielle from '../../assets/floating-arielle.png';
 import { motion } from 'framer-motion';
 
 const Hero = () => {
@@ -32,8 +32,8 @@ const Hero = () => {
         </div>
 
       </div>
-      <div className="floating-inka">
-        <img src={FloatingInka} alt="" />
+      <div className="floating-arielle">
+        <img src={FloatingArielle} alt="" />
       </div>
       
     </div>

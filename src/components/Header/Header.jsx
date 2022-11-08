@@ -12,7 +12,10 @@ const Header = () => {
         </div>
 
         <CountDown />
+
+
       </div>
+        
     </div>
   );
 };
