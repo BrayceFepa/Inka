@@ -3,8 +3,9 @@ import './Count.scss';
 
 const Count = ({nbr, txt}) => {
   return (
-      <div className="btn count-btn">
-          {nbr} {txt}
+      <div className=" count-btn">
+          {nbr} 
+          <span>{txt}</span>
     </div>
   );
 }

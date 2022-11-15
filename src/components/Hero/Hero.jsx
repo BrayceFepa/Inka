@@ -1,6 +1,6 @@
 import React from "react";
 import "./Hero.scss";
-import FloatingArielle from '../../assets/floating-arielle.png';
+import InkaImg from '../../assets/Inka.png';
 import { motion } from 'framer-motion';
 
 const Hero = () => {
@@ -13,7 +13,7 @@ const Hero = () => {
             <span>INKA</span> - TOME 1
           </h2>
           <div className="description">
-            <span>Bienvenue, je suis <a href=" https://fr.wikipedia.org/wiki/Arielle_Kitio_Tsamo" target='_blank' >Arielle KITIO</a> !!!</span>
+            <span>Bienvenue, je suis <a href=" https://fr.wikipedia.org/wiki/Arielle_Kitio_Tsamo" target='_blank' >Arielle KITIO !!!</a> </span>
             <p>
               "INKA" est une œuvre de la collection "Pepites d'Entrepreneurs"
               qui vient du fond de mon cœur et de mon esprit. <br/>Vous avez des
@@ -32,8 +32,8 @@ const Hero = () => {
         </div>
 
       </div>
-      <div className="floating-arielle">
-        <img src={FloatingArielle} alt="" />
+      <div className="inka-img">
+        <img src={InkaImg} alt="" />
       </div>
       
     </div>

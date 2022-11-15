@@ -28,6 +28,7 @@
             gap: 20px;
             >span{
                 font-weight: bold;
+                font-size: 15px;
             }
 
             .handlqty{
@@ -36,6 +37,14 @@
                 svg{
                     cursor: pointer;
                     color: #00c700;
+                }
+                @include mobilssm{
+                    svg{
+                        font-size: 25px;
+                    }
+                    span{
+                        font-size: 18px;
+                    }
                 }
             }
         }
@@ -96,7 +105,22 @@
         margin-top: 20px;
         color: #fff;
 
+        @include mobile{
+            padding: 15px;
+            
+        }
         
     }
 
+}
+
+.swal-text{
+    text-align: center;
+    color: $txt-color;
+}
+.swal-title{
+    color: $green-color;
+}
+.swal-button{
+    background-color: $green-color;
 }

@@ -9,6 +9,7 @@ import { useState } from "react";
 import { PaymentOperation, Signature } from "@hachther/mesomb";
 import { SyncLoader, FadeLoader } from "react-spinners";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
+import swal from "sweetalert";
 
 function PaymentForm({ paymentModal, setPaymentModal }) {
   const theme = useMantineTheme();
@@ -18,30 +19,30 @@ function PaymentForm({ paymentModal, setPaymentModal }) {
   };
 
   const [paymentDetails, setPaymentDetails] = useState({
-    amount: qty * 8500,
     payer: "",
     fees: true,
     service: "",
     country: "CM",
-    currency: "XAF"
+    currency: "XAF",
   });
 
   let [isLoading, setIsLoading] = useState(false);
   let [success, setSuccess] = useState(false);
+  let [isError, setIserror] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(paymentDetails);
+    console.log(paymentDetails, `and amount ${qty * 8500}`);
 
     try {
       setIsLoading(true);
       const payment = new PaymentOperation({
-        applicationKey: "9a9de514d52fdf63b041e0047dc8bf2c61773d8e",
-        accessKey: "2840fbe3-f47c-4774-b19b-54b4e98b3c1b",
-        secretKey: "6c779a9b-38a4-496f-b9b5-a40837c12529"
+        applicationKey: "54638088ae5146b4065449c4d7f51545ba4ba50a",
+        accessKey: "ab47e605-13ca-40ab-b4ed-594993fca995",
+        secretKey: "d17e44be-b10f-40e4-8d39-1caab7e26ae6",
       });
       const response = await payment.makeCollect(
-        paymentDetails.amount,
+        qty * 8500,
         paymentDetails.service,
         paymentDetails.payer,
         new Date(),
@@ -49,13 +50,20 @@ function PaymentForm({ paymentModal, setPaymentModal }) {
       );
       console.log("isOperasuccs", response.isOperationSuccess);
       console.log(response.isTransactionSuccess);
-      console.log("Nesomb error", response);
+      console.log("Nesomb response", response);
       setIsLoading(false);
       if (response.isOperationSuccess) {
         setSuccess(true);
+        swal("Transaction éffectuée avec succès !",
+          "L'équipe de CAYSTI se charge de vous livrer votre exemplaire. \n \n Contacts : contact@caysti.com / https://www.caysti.com/       ",
+          "success", {
+          button: "OK",
+        });
       }
     } catch (error) {
       console.log("Mesomb error", error);
+      setIsLoading(false);
+      setIserror(true);
     }
   };
 
@@ -100,7 +108,7 @@ function PaymentForm({ paymentModal, setPaymentModal }) {
                 onChange={(e) =>
                   setPaymentDetails({
                     ...paymentDetails,
-                    service: e.target.value
+                    service: e.target.value,
                   })
                 }
               />
@@ -119,7 +127,7 @@ function PaymentForm({ paymentModal, setPaymentModal }) {
                 onChange={(e) =>
                   setPaymentDetails({
                     ...paymentDetails,
-                    service: e.target.value
+                    service: e.target.value,
                   })
                 }
               />
@@ -149,6 +157,8 @@ function PaymentForm({ paymentModal, setPaymentModal }) {
             <>
               <CheckCircleOutlineIcon /> Transaction éffectuée avec succès
             </>
+          ) : isError ? (
+            "Une erreur s'est produite (solde insuffisant ou problème de connexion"
           ) : (
             "Payer"
           )}

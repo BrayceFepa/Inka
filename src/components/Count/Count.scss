@@ -1,30 +1,26 @@
 @use '../../scss/' as * ;
 
-@keyframes shining {
-    from{
-        transform: rotate(-20deg) translateX(-60px) ;
-    }
-    to{
-        transform: rotate(-20deg) translate(140px, 70px);
-    }
-}
 
 .count-btn{
-    background: linear-gradient(60deg, #04b804, #00e700);
+    background: $main-color;
         color: #fff;
-        font-size: 20px;
+        font-size: 22px;
         display: flex;
-        padding: 8px 20px;
+        padding: 12px 25px;
         @include flex(center, center);
         gap: 7px;
         position: relative;
         overflow: hidden;
         font-weight: bold;
-        font-size: 13px;
-
-        &:hover{
-            color: #fff;
+        font-size: 18px;
+        border-radius: 5px;
+        cursor: pointer;
+        span{
+            font-size: 15px;
         }
+
+
+      
 
         @include tablet{
             padding: 9px 16px;
@@ -32,21 +28,21 @@
         }
 
         @include mobile{
-            padding: 3px 5px;
-            font-size: 9px;
+            padding: 8px 15px;
+            font-size: 14px;
+            span{
+                font-size: 10px;
+            }
         }
 
-}
+        @include mobilssm2{
+            gap: 3px;
+            padding: 6px 9px;
+            font-size: 12px;
+            span{
+                font-size: 9px;
+                font-weight: normal;
+            }
+        }
 
-.count-btn::before{
-    content: '';
-    position: absolute;
-    height: 100px;  
-    width: 15px;
-    background: #acfc9c;
-    box-shadow: 0 0 10px #fff;
-    filter: blur(1px);
-    opacity: 0.9;
-    top: -30px;
-    animation: shining 1.6s  infinite ;
 }

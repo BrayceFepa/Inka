@@ -1,18 +1,23 @@
 @use "../../scss/" as *;
 
-@keyframes floating {
-  from {
-    bottom: 0;
-  }
-
-  to {
-    bottom: 40px;
-  }
-}
 
 .hero {
-  margin-top: 50px;
-  position: relative;
+  margin-top: 80px;
+  @include flex(center, space-between);
+  @include tablet{
+    margin-top: 30px;
+  }
+  @include mobile{
+    flex-flow: column-reverse;
+    position: relative;
+    padding: 0 30px;
+    text-align: center;
+    margin-top: 60px;
+  }
+  @include mobilssm2{
+    margin-top: 50px;
+    padding: 0 10px;
+  }
 
   // @include mobilssm{
   //   margin-top: 200px;
@@ -20,33 +25,63 @@
 
  
   &__content {
+    flex: 1;
     @include flex(flex-start, center);
     flex-flow: column;
     height: 100%;
 
-    &__info {
-      width: 45%;
-      padding-right: 30px;
+    @include mobile{
+      @include flex(center, center);
+    }
 
-      @include tablet {
-        width: 50%;
-      }
+    &__info {
+      padding-right: 20px;
+
+     
 
       .title {
         font-size: 3rem;
-        color: $main-color;
+        color: $white;
         font-weight: bold;
+
+        span{
+          position: relative;
+          &::before{
+            content: '';
+            height: 3px;
+            width: 100%;
+            background-color: $main-color;
+            position: absolute;
+            bottom: 0;
+          }
+        }
+
         @include tablet {
           font-size: 2rem;
+        }
+        @include mobile{
+          font-size: 2rem;
+        }
+        @include mobilssm2{
+          font-size: 1.5rem;
         }
       }
 
       .description {
+        margin-top: 15px;
+        color: $white;
         span {
           font-size: 2rem;
+          
+          
         }
         p {
-          font-size: 15px;
+          font-size: 17px;
+          margin-top: 15px;
+          line-height: 1.7;
+          @include tablet{
+            font-size: 15px;
+          }
         }
       }
       
@@ -55,17 +90,28 @@
 
         .description {
           span {
-            font-size: 1.2rem;
+            font-size: 2rem;
           }
           p {
-            font-size: 14px;
+            font-size: 16px;
           }
         }
       }
     }
 
+    @include mobilssm2{
+      .description{
+        span {
+            font-size: 1.5rem;
+          }
+          p{
+            font-size: 13px;
+          }
+      }
+    }
+
     .price {
-      margin-top: 20px;
+      margin-top: 10px;
       font-size: 1.7rem;
       color: rgb(0, 199, 0);
       font-weight: bold;
@@ -78,27 +124,38 @@
       }
 
       @include mobile {
+        font-size: 2rem;
+        span{
+          font-size: 1.5rem;
+        }
       }
     }
   }
 
-  .floating-arielle {
-    position: absolute;
-    top: 50px;
-    right: 420px;
-    @include mobile{
-        display: none;
-    }
-
-    img {
-      height: 300px;
-      position: relative;
-      animation: floating 1.7s alternate infinite;
-
+  .inka-img {
+   flex: 1;
+   @include flex(center, center);
+  img {
+      width: 400px;
+      height: auto;
+  
+  
+  
       @include tablet {
-        height: 200px;
-        right: -450px;
+        width: 300px;
+      }
+      
+      @include mobile{
+        width: 150px;
+        
+      }
+      @include mobilssm2{
+        width: 100px;
       }
     }
+    
+   
+
+    
   }
 }

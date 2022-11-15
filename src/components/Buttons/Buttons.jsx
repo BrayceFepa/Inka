@@ -30,7 +30,7 @@ const Buttons = () => {
           {" "}
           <ShoppingCartCheckoutIcon /> Acheter{" "}
         </button>
-        <a href="https://www.amazon.fr/" target="_blank" className="btn amazone-btn">
+        <a href="https://amzn.to/3Aiko7D" target="_blank" className="btn amazone-btn">
           
           {" "}
           <img src={AmazoneIcon} alt="" className="am-white" />{" "}

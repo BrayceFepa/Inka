@@ -1,11 +1,18 @@
 @use '../../scss/' as *;
 
 .countDown{
-    // display: grid;
-    // grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    // gap: 10px;
+    margin-right: 150px;
     @include flex(center, center);
     gap: 10px;
+
+    @include mobile{
+        margin-right: 90px;
+    }
+
+    @include mobilssm2{
+        margin-right: 85px;
+    }
+
 }
 
 

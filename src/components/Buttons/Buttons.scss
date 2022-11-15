@@ -13,13 +13,16 @@
 }
 
 .buttons {
+  margin-top: 10px;
   @include flex(center, space-between);
   gap: 20px;
-  margin-top: 30px;
+  @include tablet{
+    margin-top: 10px;
+  }
   @include mobile{
-      padding-bottom: 50px;
+    margin-top: 10px;
     flex-wrap: wrap;
-    @include flex(flex-start, center);
+    @include flex(center, center);
   }
 
   .discover-btn {
@@ -34,7 +37,7 @@
 
     &:hover {
       background: none;
-      border: 1px solid #00c700;
+      border: 2px solid #00c700;
       color: #00c700;
       font-weight: bold;
     }
@@ -52,7 +55,7 @@
 
     &:hover {
       background: none;
-      border: 1px solid #cf3d02;
+      border: 2px solid #cf3d02;
       color: #cf3d02;
       font-weight: bold;
     }
@@ -70,15 +73,10 @@
     animation: appear 1.5s ease;
 
     &:hover {
-      .am-white {
-        display: none;
-      }
-      .am-black {
-        display: block;
-      }
+      
       background: none;
       color: #221f1f;
-      border: 1px solid #221f1f;
+      border: 1px solid $white;
     }
   }
 }
